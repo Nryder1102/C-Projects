@@ -1,0 +1,4 @@
+﻿  Test 1.cpp
+C:\Users\M. Precanico\Documents\GitHub\C-Projects\MWP.cpp(15,19): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+C:\Users\M. Precanico\Documents\GitHub\C-Projects\Experiments\Test 1.cpp(149,24): warning C4267: '+=': conversion from 'size_t' to 'int', possible loss of data
+  Experiments.vcxproj -> C:\Users\M. Precanico\Documents\GitHub\C-Projects\Experiments\x64\Debug\Experiments.exe
