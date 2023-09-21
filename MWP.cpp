@@ -1,14 +1,15 @@
 //Morgan Precanico, 2023
-//A library of functions to make my life easier
+
 #include <iostream>
 #include <cstdlib>
 #include <ctime>
 using namespace std;
 
-//Create a custom namespace to use elsewhere
+//Simple library of functions I made to make my life easier/more convienent.
+//Most are probably un-needed, but they make me happy
 namespace mwp
 {
-    //Return a random int between the min and max numbers
+    //Return a random integer between the min and max numbers
     int randBetween(int minNumber,int maxNumber)
     {
         //Seed the random number generation with the current time
@@ -19,4 +20,8 @@ namespace mwp
         return output;
     }
 
+    //Simple function to clear the screen
+    void cls(){
+        system("CLS");
+    }
 }
