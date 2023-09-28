@@ -3,6 +3,7 @@
 //Imports
 #include <iostream>
 #include <iomanip>
+#include <cmath>
 //REMEMBER TO CHANGE THIS AND INCLUDE THE FILE BEFORE ZIPPING & SUBMITTING
 #include "..\MWP.cpp"
 using namespace std;
@@ -36,7 +37,7 @@ void main()
         mwp::cls();
 
         //Ask which part of the assignment to run
-        cout << "Which part of Assignment 1 would you like to run?\n1) Credit Limits\n2) Fundraising Initiative Calulator\n3) Tabular Output\n4) Factorial (Part A)\n5) \n6)\n7)\n0) Exit\n> ";
+        cout << "Which part of Assignment 1 would you like to run?\n1) Credit Limits\n2) Fundraising Initiative Calulator\n3) Tabular Output\n4) Factorial (Part A)\n5) Modified Compound-Interest Program\n6) Bar-Chart Printing Program\n7) Peter Minuit Problem\n0) Exit\n> ";
 
         //Assign the user's choice as an int
 
@@ -307,21 +308,95 @@ void part3()
     
 }
 
-//Factorial Output (Part A)
+//Factorial Output (Part A) - Done
 void part4()
 {
     //Clear the screen
     mwp::cls();
     //Introduce the idea of the program
+    cout << "Welcome to Part A of Factorial Output!" << endl;
     //Make a loop to run as long as the user wants
+    while(true){
+        //Ask user for a non-negative integer
+        int count{0};
+        int output{1};
+        //Set up a loop that goes for as long as the input number
+        cout << "Please enter a non-negative integer: ";
+        cin >> count;
+
+        for(int i{1}; i <= count; ++i) {
+            output *= i;
+        }
+
+        cout << output << endl;
+        string confirm{""};
+        cout << "Continue? (-1 to Exit): ";
+        cin >> confirm;
+        if(confirm == "-1"){
+            mwp::cls();
+            break;
+        }
+    }
 }
 
+//Modified Compound-Interest Program - Needs Psuedocode, and maybe to be Re-written
 void part5()
 {
     //Clear the screen
     mwp::cls();
     //Introduce the idea of the program
+    cout << "Welcome to the Modified Compund-Interest Program!" << endl;
     //Make a loop to run as long as the user wants
+    while(true){
+
+        //Original Figure 5.6 Program
+        //cout << fixed << setprecision(2);
+
+        //double principal{1000.0};
+        //double rate{0.05};
+
+        //cout << "Initial principal: " << principal << endl;
+        //cout << "    Interest Rate: " << rate << endl;
+
+        //cout << "\nYear" << setw(20) << "Amount on Deposit" << endl;
+
+        //for (unsigned int year{1}; year <= 10; year++){
+            
+        //    double amount = principal * pow(1.0 + rate, year);
+            
+        //    cout << setw(4) << year << setw(20) << amount << endl;
+        //}
+
+        cout << fixed << setprecision(2);
+
+        double principal{0};
+
+        cout << "Please enter the inital principal : $";
+        cin >> principal;
+
+        cout << "\nYear" << setw(15) << "Deposit:" << setw(10) << "5% Rate" << setw(15) << "6% Rate" << setw(15) << "7% Rate" << setw(15) << "8% Rate" << setw(15) << "9% Rate" << setw(15) << "10% Rate" << endl;
+
+        for (unsigned int year{1}; year <= 10; year++){
+            
+            double amount1 = principal * pow(1.0 + 0.05, year);
+            double amount2 = principal * pow(1.0 + 0.06, year);
+            double amount3 = principal * pow(1.0 + 0.07, year);
+            double amount4 = principal * pow(1.0 + 0.08, year);
+            double amount5 = principal * pow(1.0 + 0.09, year);
+            double amount6 = principal * pow(1.0 + 0.10, year);
+            
+            cout << setw(4) << year << setw(25) << amount1 << setw(15) << amount2 << setw(15) << amount3 << setw(15) << amount4 << setw(15) << amount5 << setw(15) << amount6 << endl;
+        }
+
+        string confirm{""};
+        cout << "Continue? (-1 to Exit): ";
+        cin >> confirm;
+        if(confirm == "-1"){
+            mwp::cls();
+            break;
+        }
+
+    }
 }
 
 void part6()

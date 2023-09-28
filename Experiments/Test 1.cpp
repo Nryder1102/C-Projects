@@ -18,6 +18,7 @@ string lab3();
 int lab4(int);
 void lab5();
 void lab6();
+void lab7();
 
 //The mandatory main function
 int main()
@@ -32,7 +33,7 @@ int main()
 void testLab()
 {
 	
-	lab6();
+	lab7();
 }
 
 int lab1()
@@ -158,4 +159,8 @@ void lab6()
 	cout << "--------------\nTotal Amount of Letters: " << total << endl;
 	//Display the average amount of letters
 	cout << "Average Amount of Letters: " << total / wordCount << "\n--------------";
+}
+
+void lab7(){
+	
 }
