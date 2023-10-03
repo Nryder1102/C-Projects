@@ -4,8 +4,7 @@
 #include <iostream>
 #include <iomanip>
 #include <cmath>
-//REMEMBER TO CHANGE THIS AND INCLUDE THE FILE BEFORE ZIPPING & SUBMITTING
-#include "..\MWP.cpp"
+#include "MWP.cpp"
 using namespace std;
 
 //While making this, I realized that VSCode will assign comments above things as sort of their definition when you hover over them, so I might take advantage of this in the future, just making sure this is known in case my pseudocode looks a litle weird. That's just me labeling stuff
@@ -18,7 +17,6 @@ void part3();
 void part4();
 void part5();
 void part6();
-void part7();
 
 
 //The Big One That Runs Everything Else
@@ -37,7 +35,7 @@ void main()
         mwp::cls();
 
         //Ask which part of the assignment to run
-        cout << "Which part of Assignment 1 would you like to run?\n1) Credit Limits\n2) Fundraising Initiative Calulator\n3) Tabular Output\n4) Factorial (Part A)\n5) Modified Compound-Interest Program\n6) Bar-Chart Printing Program\n7) Peter Minuit Problem\n0) Exit\n> ";
+        cout << "Which part of Assignment 1 would you like to run?\n1) Credit Limits\n2) Fundraising Initiative Calulator\n3) Tabular Output\n4) Factorial (Part A)\n5) Modified Compound-Interest Program\n6) Bar-Chart Printing Program\n0) Exit\n> ";
 
         //Assign the user's choice as an int
 
@@ -72,10 +70,6 @@ void main()
             }
             case 6:{
                 part6();
-                break;
-            }
-            case 7:{
-                part7();
                 break;
             }
             //If the user enters 0, exit
@@ -339,7 +333,7 @@ void part4()
     }
 }
 
-//Modified Compound-Interest Program - Needs Psuedocode, and maybe to be Re-written
+//Modified Compound-Interest Program - Done
 void part5()
 {
     //Clear the screen
@@ -367,15 +361,20 @@ void part5()
         //    cout << setw(4) << year << setw(20) << amount << endl;
         //}
 
+        //Set precision to 2
         cout << fixed << setprecision(2);
 
+        //Make a principal variable
         double principal{0};
 
+        //Ask user for the inital principal
         cout << "Please enter the inital principal : $";
         cin >> principal;
 
+        //Print a header for the table
         cout << "\nYear" << setw(15) << "Deposit:" << setw(10) << "5% Rate" << setw(15) << "6% Rate" << setw(15) << "7% Rate" << setw(15) << "8% Rate" << setw(15) << "9% Rate" << setw(15) << "10% Rate" << endl;
 
+        //For each year, print how much money you'd have at each investment rate, between 5%-10%
         for (unsigned int year{1}; year <= 10; year++){
             
             double amount1 = principal * pow(1.0 + 0.05, year);
@@ -385,9 +384,11 @@ void part5()
             double amount5 = principal * pow(1.0 + 0.09, year);
             double amount6 = principal * pow(1.0 + 0.10, year);
             
+            //Print the different amounts of money at different rates
             cout << setw(4) << year << setw(25) << amount1 << setw(15) << amount2 << setw(15) << amount3 << setw(15) << amount4 << setw(15) << amount5 << setw(15) << amount6 << endl;
         }
 
+        //Ask the user if they want to continue
         string confirm{""};
         cout << "Continue? (-1 to Exit): ";
         cin >> confirm;
@@ -399,19 +400,108 @@ void part5()
     }
 }
 
+//Bar Chart Printing Program - Done
 void part6()
 {
     //Clear the screen
     mwp::cls();
     //Introduce the idea of the program
+    cout << "Welcome to the Bar-Chart Printing Program!" << endl;
     //Make a loop to run as long as the user wants
-}
+    while(true){
 
-void part7()
-{
-    //Clear the screen
-    mwp::cls();
-    //Introduce the idea of the program
-    //Make a loop to run as long as the user wants
+        //Make 5 ints, one for each input
 
+        //Number 1
+        int one{0};
+        //Number 2
+        int two{0};
+        //Number 3
+        int three{0};
+        //Number 4
+        int four{0};
+        //Number 5
+        int five{0};
+
+        
+
+        //Ask for 5 numbers
+        cout << "Please enter 5 numbers\nNumber 1: ";
+        cin >> one;
+        cout << "Number 2: ";
+        cin >> two;
+        cout << "Number 3: ";
+        cin >> three;
+        cout << "Number 4: ";
+        cin >> four;
+        cout << "Number 5: ";
+        cin >> five;
+
+        //Make an integer array
+        int numbers[5] = {one,two,three,four,five};
+
+        //Make a string array for the bars
+        string bars[5];
+        
+        //For each item in the array, get the number
+        for(int i{0}; i < 5; i++){
+            //If the number equals something between 1-9, get the corresponding bar and add it to the bars array, otherwise display Not A Valid Number!
+            switch(numbers[i]){
+                case 1:{
+                    bars[i] = "1\n1";
+                    break;
+                }
+                case 2:{
+                    bars[i] = "22\n22";
+                    break;
+                }
+                case 3:{
+                    bars[i] = "333\n333";
+                    break;
+                }
+                case 4:{
+                    bars[i] = "4444\n4444";
+                    break;
+                }
+                case 5:{
+                    bars[i] = "55555\n55555";
+                    break;
+                }
+                case 6:{
+                    bars[i] = "666666\n666666";
+                    break;
+                }
+                case 7:{
+                    bars[i] = "7777777\n7777777";
+                    break;
+                }
+                case 8:{
+                    bars[i] = "88888888\n88888888";
+                    break;
+                }
+                case 9:{
+                    bars[i] = "999999999\n999999999";
+                    break;
+                }
+                default:{
+                    bars[i] = "Not a Valid Number!";
+                    break;
+                }
+            }
+        }
+
+        //For each item in the bars array, print the bar
+        for(int i{0}; i < 5; i++){
+            cout << bars[i] << endl;
+        }
+
+        //Ask to continue
+        string confirm{""};
+        cout << "Continue? (-1 to Exit): ";
+        cin >> confirm;
+        if(confirm == "-1"){
+            mwp::cls();
+            break;
+        }
+    }
 }
