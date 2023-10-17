@@ -1,4 +1,4 @@
 ﻿  Assignment 1.cpp
-C:\Users\M. Precanico\Documents\GitHub\C-Projects\Assignment 1\MWP.cpp(15,19): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-C:\Users\M. Precanico\Documents\GitHub\C-Projects\Assignment 1\Assignment 1.cpp(18,1): warning C4326: return type of 'main' should be 'int' instead of 'void'
+C:\Users\M. Precanico\Documents\GitHub\C-Projects\Assignment 1\MWP.cpp(16,19): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+C:\Users\M. Precanico\Documents\GitHub\C-Projects\Assignment 1\Assignment 1.cpp(24,1): warning C4326: return type of 'main' should be 'int' instead of 'void'
   Assignment 1.vcxproj -> C:\Users\M. Precanico\Documents\GitHub\C-Projects\Assignment 1\x64\Debug\Assignment 1.exe
