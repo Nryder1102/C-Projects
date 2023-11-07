@@ -163,4 +163,5 @@ void lab6()
 
 void lab7(){
 	
+
 }

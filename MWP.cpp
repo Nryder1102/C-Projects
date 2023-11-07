@@ -3,6 +3,7 @@
 #include <iostream>
 #include <cstdlib>
 #include <ctime>
+#include <vector>
 using namespace std;
 
 //Simple library of functions I made to make my life easier/more convienent.
@@ -12,8 +13,6 @@ namespace mwp
     //Return a random integer between the min and max numbers
     int randBetween(int minNumber,int maxNumber)
     {
-        //Seed the random number generation with the current time
-        srand(time(0));
         //Generate and assign the random int between the min/max
         int output = minNumber + rand() % maxNumber;
         //Return the output
@@ -23,5 +22,24 @@ namespace mwp
     //Simple function to clear the screen
     void cls(){
         system("CLS");
+    }
+    
+    //Function to split strings according to a specified token
+    vector<string> splitString(string str, char splitter){
+    vector<string> result;
+    string current = ""; 
+    for(int i = 0; i < str.size(); i++){
+        if(str[i] == splitter){
+            if(current != ""){
+                result.push_back(current);
+                current = "";
+            } 
+            continue;
+        }
+        current += str[i];
+    }
+    if(current.size() != 0)
+        result.push_back(current);
+    return result;
     }
 }
