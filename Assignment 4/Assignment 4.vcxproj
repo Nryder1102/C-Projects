@@ -133,6 +133,7 @@
     <ClCompile Include="DeckOfCards.cpp" />
     <ClCompile Include="Enhanced Date.cpp" />
     <ClCompile Include="Enhanced Time.cpp" />
+    <ClCompile Include="MWP.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Card.h" />
@@ -140,6 +141,7 @@
     <ClInclude Include="DeckOfCards.h" />
     <ClInclude Include="Enhanced Date.h" />
     <ClInclude Include="Enhanced Time.h" />
+    <ClInclude Include="MWP.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

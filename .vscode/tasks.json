@@ -8,8 +8,8 @@
                 "/Zi",
                 "/EHsc",
                 "/nologo",
-                "/Fe${fileDirname}\\${fileBasenameNoExtension}.exe",
-                "${file}"
+                "/Fe${workspaceFolder}\\${fileBasenameNoExtension}.exe",
+                "${fileDirname}/*.cpp"
             ],
             "options": {
                 "cwd": "${fileDirname}"

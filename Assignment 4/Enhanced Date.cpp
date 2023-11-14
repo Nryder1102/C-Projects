@@ -29,17 +29,33 @@ void Date::setMonth(int m){
 //Set the 'Day' field of a 'Date' object
 //Must be between 1-31
 void Date::setDay(int d){
-    if(month == 2){
-        if(d >= 1 && d <= 28){
-            day = d;
-        }else{
-            throw invalid_argument("Must be Between 1-28");
+    switch(month){
+        case 2: {
+            if(d >= 1 && d <= 28){
+                day = d;
+            }else{
+                throw invalid_argument("Day must be between 1-28 for Month 2");
+            }
+            break; 
         }
-    }else{
-        if(d >= 1 && d <= 31){
-            day = d;
-        }else{
-            throw invalid_argument("Must be Between 1-31");
+        case 4:
+        case 6:
+        case 9:
+        case 11: {
+            if(d >= 1 && d <= 30){
+                day = d;
+            }else{
+                throw invalid_argument("Day must be between 1-30 for Months 4,6,9,11");
+            }
+            break;
+        }
+        default: {
+            if(d >= 1 && d <= 31){
+                day = d;
+            }else{
+                throw invalid_argument("Day must be between 1-31 for Months 1,3,5,7,8,10,12");
+            }
+            break;
         }
     }
 }
@@ -57,7 +73,57 @@ string Date::toString() const {
 }
 
 void Date::nextDay() {
-
+    switch(month){
+        case 2: {
+            if(day+1 != 29){
+                day += 1;
+            }else{
+                if(month+1 == 13){
+                    year += 1;
+                    month = 1;
+                    day = 1;
+                }else{
+                    month += 1;
+                    day = 1;
+                }
+            }
+            break; 
+        }
+        case 4:
+        case 6:
+        case 9:
+        case 11: {
+            if(day+1 != 31){
+                day += 1;
+            }else{
+                if(month+1 == 13){
+                    year += 1;
+                    month = 1;
+                    day = 1;
+                }else{
+                    month += 1;
+                    day = 1;
+                }
+            }
+            break;
+        }
+        default: {
+            if(day+1 != 32){
+                day += 1;
+            }else{
+                if(month+1 == 13){
+                    year += 1;
+                    month = 1;
+                    day = 1;
+                }else{
+                    month += 1;
+                    day = 1;
+                }
+            }
+            break;
+        }
+    }
+    
 }
 
 
