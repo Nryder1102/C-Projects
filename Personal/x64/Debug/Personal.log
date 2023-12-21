@@ -1,0 +1,11 @@
+﻿  Armor.cpp
+C:\Users\M. Precanico\Documents\GitHub\C-Projects\Personal\Armor.cpp(2,10): fatal  error C1083: Cannot open include file: 'Player.h': No such file or directory
+  Enemy.cpp
+C:\Users\M. Precanico\Documents\GitHub\C-Projects\Personal\Enemy.cpp(5,8): error C2600: 'Enemy::Enemy': cannot define a compiler-generated special member function (must be declared in the class first)
+  Entity.cpp
+  Main Project.cpp
+C:\Users\M. Precanico\Documents\GitHub\C-Projects\Personal\Main Project.cpp(3,10): fatal  error C1083: Cannot open include file: 'Enemy.h': No such file or directory
+  Player.cpp
+  Shield.cpp
+  Weapon.cpp
+  Generating Code...
